@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent dbsWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.dbsWeb)));
                 startActivity(dbsWeb);
             } else if (id == R.id.contactSelection) {
-                Intent callDBS = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + 18001111111L));
+                Intent callDBS = new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.dbsCall)));
                 startActivity(callDBS);
             } else if (id == R.id.toggleFav) {
                 if (tvDBS.getCurrentTextColor() == Color.BLACK) {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent ocbcWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.ocbcWeb)));
                 startActivity(ocbcWeb);
             } else if (id == R.id.contactSelection) {
-                Intent callOCBC = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + 18003633333L));
+                Intent callOCBC = new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.ocbcCall)));
                 startActivity(callOCBC);
             } else if (id == R.id.toggleFav) {
                 if (tvDBS.getCurrentTextColor() == Color.BLACK) {
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent uobWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.uobWeb)));
                 startActivity(uobWeb);
             } else if (id == R.id.contactSelection) {
-                Intent callUOB = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + 18002222121L));
+                Intent callUOB = new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.uobCall)));
                 startActivity(callUOB);
             } else if (id == R.id.toggleFav) {
                 if (tvDBS.getCurrentTextColor() == Color.BLACK) {

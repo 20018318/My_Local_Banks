@@ -14,4 +14,7 @@
     <string name="dbsWeb">https://www.dbs.com.sg</string>
     <string name="ocbcWeb">https://www.ocbc.com</string>
     <string name="uobWeb">https://www.uob.com.sg</string>
+    <string name="dbsCall">tel:18001111111</string>
+    <string name="ocbcCall">tel:18003633333</string>
+    <string name="uobCall">tel:18002222121</string>
 </resources>
