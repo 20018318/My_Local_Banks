@@ -62,55 +62,52 @@ public class MainActivity extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (wordClicked.equalsIgnoreCase("DBS")) {
+        if (wordClicked.equalsIgnoreCase(getString(R.string.dbs))) {
             if (id == R.id.webSelection) {
-                Intent dbsWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.dbs.com.sg"));
+                Intent dbsWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.dbsWeb)));
                 startActivity(dbsWeb);
             } else if (id == R.id.contactSelection) {
                 Intent callDBS = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + 18001111111L));
                 startActivity(callDBS);
             } else if (id == R.id.toggleFav) {
-                if (tvDBS.getCurrentTextColor() == Color.BLACK){
+                if (tvDBS.getCurrentTextColor() == Color.BLACK) {
                     tvDBS.setTextColor(Color.RED);
                 } else if (tvDBS.getCurrentTextColor() == Color.RED) {
                     tvDBS.setTextColor(Color.BLACK);
                 }
+                return true; //menu item successfully handled
             }
-            return true; //menu item successfully handled
-        }
+        } // end
 
-        if (wordClicked.equalsIgnoreCase("OCBC")) {
+        if (wordClicked.equalsIgnoreCase(getString(R.string.ocbc))) {
             if (id == R.id.webSelection) {
-                Intent ocbcWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.ocbc.com"));
+                Intent ocbcWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.ocbcWeb)));
                 startActivity(ocbcWeb);
             } else if (id == R.id.contactSelection) {
                 Intent callOCBC = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + 18003633333L));
                 startActivity(callOCBC);
             } else if (id == R.id.toggleFav) {
-                tvOCBC.setTextColor(Color.parseColor("#FF0000"));
-            } } else if (id == R.id.toggleFav) {
-            if (tvDBS.getCurrentTextColor() == Color.BLACK){
-                tvDBS.setTextColor(Color.RED);
-            } else if (tvDBS.getCurrentTextColor() == Color.RED) {
-                tvDBS.setTextColor(Color.BLACK);
+                if (tvDBS.getCurrentTextColor() == Color.BLACK) {
+                    tvDBS.setTextColor(Color.RED);
+                } else if (tvDBS.getCurrentTextColor() == Color.RED) {
+                    tvDBS.setTextColor(Color.BLACK);
+                }
+                return true; //menu item successfully handled
             }
-            return true; //menu item successfully handled
         }
-
-        if (wordClicked.equalsIgnoreCase("UOB")) {
-            if(id == R.id.webSelection) {
-                Intent uobWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.uob.com.sg"));
+        if (wordClicked.equalsIgnoreCase(getString(R.string.uob))) {
+            if (id == R.id.webSelection) {
+                Intent uobWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.uobWeb)));
                 startActivity(uobWeb);
-            } else if(id == R.id.contactSelection) {
-                Intent callUOB = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+18002222121L));
+            } else if (id == R.id.contactSelection) {
+                Intent callUOB = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + 18002222121L));
                 startActivity(callUOB);
             } else if (id == R.id.toggleFav) {
-                tvUOB.setTextColor(Color.parseColor("#FF0000"));
-            }} else if (id == R.id.toggleFav) {
-            if (tvDBS.getCurrentTextColor() == Color.BLACK){
-                tvDBS.setTextColor(Color.RED);
-            } else if (tvDBS.getCurrentTextColor() == Color.RED) {
-                tvDBS.setTextColor(Color.BLACK);
+                if (tvDBS.getCurrentTextColor() == Color.BLACK) {
+                    tvDBS.setTextColor(Color.RED);
+                } else if (tvDBS.getCurrentTextColor() == Color.RED) {
+                    tvDBS.setTextColor(Color.BLACK);
+                }
             }
             return true; //menu item successfully handled
         }
@@ -123,19 +120,16 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.englishSelection) {
-            tvDBS.setText("DBS");
-            tvOCBC.setText("OCBC");
-            tvUOB.setText("UOB");
+            tvDBS.setText(R.string.dbs);
+            tvOCBC.setText(R.string.ocbc);
+            tvUOB.setText(R.string.uob);
             return true;
         } else if (id == R.id.chineseSelection) {
-            tvDBS.setText("星展银行");
-            tvOCBC.setText("华侨银行");
-            tvUOB.setText("大华银行");
+            tvDBS.setText(R.string.dbsChi);
+            tvOCBC.setText(R.string.ocbcChi);
+            tvUOB.setText(R.string.uobChi);
             return true;
-        } else {
-            tvDBS.setText("Error translation");
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
